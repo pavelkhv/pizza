@@ -3,10 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 $main-font: 'Roboto', sans-serif;
-$grey-color: #ebebeb;
+$grey-color: #f0f0f0;
 $dark-color: #333333;
 $main-color: #F2433B;
 $main-color-hover: #fc3227;
+$second-color: #FE9D33;
 
 html {
   font-size: 15px;
@@ -15,7 +16,7 @@ html {
 
 .app {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   padding: 1rem;
   background: #f0faff;
 }
@@ -86,5 +87,175 @@ html {
     background: url('../img/icons/cart.svg') no-repeat;
     background-size: contain;
     background-position: 100% 0;
+  }
+}
+
+.main {
+  width: 100%;
+  padding: 1rem 2rem;
+}
+
+.catalog {
+  width: 100%;
+  height: 100%;
+  color: $dark-color;
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__list {
+      display: flex;
+      align-items: center;
+      padding: 2rem 0;
+    }
+    &__item {
+      padding: 0.7rem 1.5rem;
+      margin-right: 1rem;
+      background: $grey-color;
+      border-radius: 5px;
+      font-weight: 500;
+      transition: 0.3s;
+      cursor: pointer;
+      &:hover {
+        background: #e7e7e7;
+      }
+      &_active {
+        background: $second-color;
+        color: #fff;
+        &:hover {
+          background: $second-color;
+        }
+      }
+    }
+    &__sort {
+      &-type {
+        border-bottom: 1px dashed $second-color; 
+        cursor: pointer;
+        color: $second-color;
+      }
+      &:before {
+        content: '\25bc';
+        font-size: 0.8rem;
+        margin-right: 5px;
+      }
+    }
+  }
+  &-main {
+    &__title {
+      font-size: 2rem;
+    }
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -2rem;
+    }
+  }
+  &-item {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    padding: 2rem;
+    &__img {
+      display: block;
+      width: 100%;
+      padding: 0 1.5rem;
+    }
+    &__title {
+      font-size: 1.5rem;
+      text-align: center;
+      margin: 0.5rem 0;
+    }
+    &__description {
+      text-align: center;
+      margin-bottom: 1rem;
+      flex: 1;
+    }
+    &__params {
+      background: $grey-color;
+      color: grey;
+      border-radius: 5px;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    &__types {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      &-item {
+        text-align: center;
+        width: calc(50% - 0.25rem);
+        padding: 0.5rem;
+        border-radius: 5px;
+        transition: 0.3s;
+        cursor: pointer;
+        &:hover {
+          background: #fff;
+        }
+        &_active {
+          background: #fff;
+          color: $dark-color;
+        }
+        &_disabled {
+          background: lightgrey;
+          &:hover {
+            background: lightgrey;
+            cursor: default;
+          }
+        }
+      }
+    }
+    &__radius {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 500;
+      &-item {
+        text-align: center;
+        width: calc(33.333% - 0.25rem);
+        padding: 0.5rem;
+        border-radius: 5px;
+        transition: 0.3s;
+        cursor: pointer;
+        &:hover {
+          background: #fff;
+        }
+        &_active {
+          background: #fff;
+          color: $dark-color;
+        }
+      }
+    }
+    &__footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &-info {
+        display: flex;
+        flex-direction: column;
+      }
+      &-price {
+        font-weight: 500;
+        font-size: 1.2rem;
+      }
+      &-weight {
+        font-size: 0.9rem;
+      }
+      &-button {
+        background: transparent;
+        color: $second-color;
+        border: 2px solid $second-color;
+        border-radius: 5px;
+        padding: 0.5rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 500;
+        outline: 0;
+        transition: 0.3s;
+        cursor: pointer;
+        &:hover {
+          background: $second-color;
+          color: #fff;
+        }
+      }
+    }
   }
 }

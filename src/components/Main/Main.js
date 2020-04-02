@@ -6,10 +6,10 @@ import Order from '../Order/Order';
 
 function Main() {
   return (
-    <div>
+    <main className="main">
       <Route exact path="/" component={Catalog} />
       <Route path="/order" component={Order} />
-    </div>
+    </main>
   )
 }
 
