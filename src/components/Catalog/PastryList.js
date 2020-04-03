@@ -10,9 +10,9 @@ function PastryList({ typesPastry, type, setType, size }) {
         return (
           <li
             key={pastry.id}
-            className={`catalog-item__types-item ${
+            className={`${
               disabled ? "catalog-item__types-item_disabled" : 
-              active ? "catalog-item__types-item_active" : ""
+              active ? "catalog-item__types-item_active" : "catalog-item__types-item"
             }`}
             onClick={() => (disabled ? {} : setType(pastry.type))}
           >

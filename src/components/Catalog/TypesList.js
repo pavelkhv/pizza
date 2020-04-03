@@ -5,15 +5,13 @@ function TypesList({ typesPizza, currentType, setCurrentType }) {
     <ul className="catalog-header__list">
       {
         typesPizza.map(item => {
-          const active = item.type == currentType;
+          const active = item.value == currentType.value;
 
           return (
             <li 
               key={item.id}
-              className={`catalog-header__item ${
-                active ? 'catalog-header__item_active' : ''
-              }`}
-              onClick={() => setCurrentType(item.type)}
+              className={`${active ? 'catalog-header__item_active' : 'catalog-header__item'}`}
+              onClick={() => setCurrentType(item)}
             >
               {item.name}
             </li>

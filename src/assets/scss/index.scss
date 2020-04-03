@@ -120,6 +120,7 @@ html {
         background: #e7e7e7;
       }
       &_active {
+        @extend .catalog-header__item;
         background: $second-color;
         color: #fff;
         &:hover {
@@ -128,15 +129,49 @@ html {
       }
     }
     &__sort {
+      position: relative;
+      &:before {
+        content: '\25bc';
+        font-size: 0.8rem;
+        margin-right: 5px;
+      }
+      &_open{
+        @extend .catalog-header__sort;
+        &:before {
+          content: '\25b2';
+        }
+      }
       &-type {
         border-bottom: 1px dashed $second-color; 
         cursor: pointer;
         color: $second-color;
       }
-      &:before {
-        content: '\25bc';
-        font-size: 0.8rem;
-        margin-right: 5px;
+      &-list {
+        position: absolute;
+        right: 0;
+        top: 150%;
+        padding: 0.5rem 0;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+      &-item {
+        padding: 0.5rem 1rem;
+        transition: 0.3s;
+        cursor: pointer;
+        &:hover {
+          background: #f2f2f2;
+        }
+        &_active {
+          @extend .catalog-header__sort-item;
+          color: $second-color;
+          background: rgba($second-color, 0.15);
+          &:hover {
+            color: $second-color;
+            background: rgba($second-color, 0.15);
+          }
+        }
       }
     }
   }
@@ -193,10 +228,12 @@ html {
           background: #fff;
         }
         &_active {
+          @extend .catalog-item__types-item;
           background: #fff;
           color: $dark-color;
         }
         &_disabled {
+          @extend .catalog-item__types-item;
           background: lightgrey;
           &:hover {
             background: lightgrey;
