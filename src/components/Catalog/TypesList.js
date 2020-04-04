@@ -10,7 +10,7 @@ function TypesList({ typesPizza, currentType, setCurrentType }) {
           return (
             <li 
               key={item.id}
-              className={`${active ? 'catalog-header__item_active' : 'catalog-header__item'}`}
+              className={active ? 'catalog-header__item_active' : 'catalog-header__item'}
               onClick={() => setCurrentType(item)}
             >
               {item.name}

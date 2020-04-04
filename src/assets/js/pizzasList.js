@@ -9,27 +9,32 @@ export default [
       slim: null,
       traditional: {
         price: 9.9,
-        weight: 395
+        weight: 395,
+        count: 0
       }
     },
     medium: {
       slim: {
         price: 17.2,
-        weight: 420
+        weight: 420,
+        count: 0
       },
       traditional: {
         price: 16.9,
-        weight: 655
+        weight: 655,
+        count: 0
       }
     },
     large: {
       slim: {
         price: 21.9,
-        weight: 575
+        weight: 575,
+        count: 0
       },
       traditional: {
         price: 20.9,
-        weight: 875
+        weight: 875,
+        count: 0
       }
     },
   },
@@ -43,27 +48,32 @@ export default [
       slim: null,
       traditional: {
         price: 8.5,
-        weight: 380
+        weight: 380,
+        count: 0
       }
     },
     medium: {
       slim: {
         price: 14.7,
-        weight: 410
+        weight: 410,
+        count: 0
       },
       traditional: {
         price: 13.7,
-        weight: 635
+        weight: 635,
+        count: 0
       }
     },
     large: {
       slim: {
         price: 17.1,
-        weight: 555
+        weight: 555,
+        count: 0
       },
       traditional: {
         price: 16.1,
-        weight: 835
+        weight: 835,
+        count: 0
       }
     },
   },
@@ -77,27 +87,32 @@ export default [
       slim: null,
       traditional: {
         price: 10.2,
-        weight: 395
+        weight: 395,
+        count: 0
       }
     },
     medium: {
       slim: {
         price: 18.9,
-        weight: 430
+        weight: 430,
+        count: 0
       },
       traditional: {
         price: 17.9,
-        weight: 665
+        weight: 665,
+        count: 0
       }
     },
     large: {
       slim: {
         price: 22.3,
-        weight: 600
+        weight: 600,
+        count: 0
       },
       traditional: {
         price: 21.3,
-        weight: 915
+        weight: 915,
+        count: 0
       }
     },
   },
@@ -111,27 +126,32 @@ export default [
       slim: null,
       traditional: {
         price: 10.6,
-        weight: 400
+        weight: 400,
+        count: 0
       }
     },
     medium: {
       slim: {
         price: 16.7,
-        weight: 415
+        weight: 415,
+        count: 0
       },
       traditional: {
         price: 15.7,
-        weight: 650
+        weight: 650,
+        count: 0
       }
     },
     large: {
       slim: {
         price: 19.9,
-        weight: 580
+        weight: 580,
+        count: 0
       },
       traditional: {
         price: 28.9,
-        weight: 870
+        weight: 870,
+        count: 0
       }
     },
   },
@@ -145,27 +165,32 @@ export default [
       slim: null,
       traditional: {
         price: 11.1,
-        weight: 410
+        weight: 410,
+        count: 0
       }
     },
     medium: {
       slim: {
         price: 16.9,
-        weight: 430
+        weight: 430,
+        count: 0
       },
       traditional: {
         price: 15.9,
-        weight: 670
+        weight: 670,
+        count: 0
       }
     },
     large: {
       slim: {
         price: 24.3,
-        weight: 615
+        weight: 615,
+        count: 0
       },
       traditional: {
         price: 22.3,
-        weight: 920
+        weight: 920,
+        count: 0
       }
     },
   },
@@ -179,27 +204,32 @@ export default [
       slim: null,
       traditional: {
         price: 9.5,
-        weight: 365
+        weight: 365,
+        count: 0
       }
     },
     medium: {
       slim: {
         price: 15.4,
-        weight: 410
+        weight: 410,
+        count: 0
       },
       traditional: {
         price: 14.5,
-        weight: 645
+        weight: 645,
+        count: 0
       }
     },
     large: {
       slim: {
         price: 18.3,
-        weight: 545
+        weight: 545,
+        count: 0
       },
       traditional: {
         price: 17.3,
-        weight: 840
+        weight: 840,
+        count: 0
       }
     },
   },
@@ -213,27 +243,32 @@ export default [
       slim: null,
       traditional: {
         price: 10.2,
-        weight: 365
+        weight: 365,
+        count: 0
       }
     },
     medium: {
       slim: {
         price: 17.4,
-        weight: 425
+        weight: 425,
+        count: 0
       },
       traditional: {
         price: 16.4,
-        weight: 650
+        weight: 650,
+        count: 0
       }
     },
     large: {
       slim: {
         price: 21.8,
-        weight: 570
+        weight: 570,
+        count: 0
       },
       traditional: {
         price: 20.8,
-        weight: 870
+        weight: 870,
+        count: 0
       }
     },
   },
@@ -247,27 +282,32 @@ export default [
       slim: null,
       traditional: {
         price: 13.5,
-        weight: 400
+        weight: 400,
+        count: 0
       }
     },
     medium: {
       slim: {
         price: 19.6,
-        weight: 430
+        weight: 430,
+        count: 0
       },
       traditional: {
         price: 18.6,
-        weight: 680
+        weight: 680,
+        count: 0
       }
     },
     large: {
       slim: {
         price: 23.5,
-        weight: 610
+        weight: 610,
+        count: 0
       },
       traditional: {
         price: 22.5,
-        weight: 920
+        weight: 920,
+        count: 0
       }
     },
   },
@@ -281,27 +321,32 @@ export default [
       slim: null,
       traditional: {
         price: 9.9,
-        weight: 395
+        weight: 395,
+        count: 0
       }
     },
     medium: {
       slim: {
         price: 17.2,
-        weight: 420
+        weight: 420,
+        count: 0
       },
       traditional: {
         price: 16.9,
-        weight: 655
+        weight: 655,
+        count: 0
       }
     },
     large: {
       slim: {
         price: 21.9,
-        weight: 575
+        weight: 575,
+        count: 0
       },
       traditional: {
         price: 20.9,
-        weight: 875
+        weight: 875,
+        count: 0
       }
     },
   },
@@ -315,27 +360,32 @@ export default [
       slim: null,
       traditional: {
         price: 10.9,
-        weight: 385
+        weight: 385,
+        count: 0
       }
     },
     medium: {
       slim: {
         price: 17.9,
-        weight: 435
+        weight: 435,
+        count: 0
       },
       traditional: {
         price: 16.9,
-        weight: 660
+        weight: 660,
+        count: 0
       }
     },
     large: {
       slim: {
         price: 22.9,
-        weight: 595
+        weight: 595,
+        count: 0
       },
       traditional: {
         price: 21.9,
-        weight: 895
+        weight: 895,
+        count: 0
       }
     },
   },

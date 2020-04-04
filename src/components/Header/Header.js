@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CartButton from '../Cart/CartButton';
+import Cart from '../Cart/Cart';
 
 import Logo from '../Logo/Logo';
 
@@ -8,7 +8,7 @@ function Header() {
   return (
     <header className="header">
       <Logo />
-      <CartButton />
+      <Cart />
     </header>
   )
 }

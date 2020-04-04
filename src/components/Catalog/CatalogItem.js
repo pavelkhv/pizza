@@ -1,24 +1,29 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+
+import { addCart } from '../../actions/index';
 
 import SizeList from './SizeList';
 import PastryList from './PastryList';
+import ChangeButtons from '../Cart/ChangeButtons';
 
 const TYPES_PASTRY = [
-  {id: 0, type: "traditional", name: "Традиционное"}, 
-  {id: 1, type: "slim", name: "Тонкое"}
+  {id: 0, value: "traditional", name: "Традиционное"}, 
+  {id: 1, value: "slim", name: "Тонкое"}
 ];
 
 const RADIUS_PIZZA = [
-  {id: 0, type: "small", size: 22}, 
-  {id: 1, type: "medium", size: 30}, 
-  {id: 2, type: "large", size: 36}
+  {id: 0, type: "small", value: 22}, 
+  {id: 1, type: "medium", value: 30}, 
+  {id: 2, type: "large", value: 36}
 ];
 
-function CatalogItem({ pizza }) {
-  const [type, setType] = useState('traditional');
-  const [size, setSize] = useState('small');
+function CatalogItem({ pizza, cart, addCart }) {
+  const [type, setType] = useState(TYPES_PASTRY[0]);
+  const [size, setSize] = useState(RADIUS_PIZZA[0]);
 
-  const paramsPizza = pizza[size][type];
+  const paramsPizza = pizza[size.type][type.value];
+  const item = {pizza, pastry: type, size};
 
   return (
     <li className="catalog-item">
@@ -41,6 +46,7 @@ function CatalogItem({ pizza }) {
 
         <SizeList 
           pizzasSize={RADIUS_PIZZA} 
+          typesPastry={TYPES_PASTRY}
           size={size}
           setSize={setSize}
           setType={setType}
@@ -53,10 +59,20 @@ function CatalogItem({ pizza }) {
           <span className="catalog-item__footer-weight">{paramsPizza.weight} гр</span>
         </div>
 
-        <button className="catalog-item__footer-button">В корзину</button>
+        {paramsPizza.count 
+          ? <ChangeButtons item={item}/> 
+          : <button 
+              className="catalog-item__footer-button"
+              onClick={() => addCart(pizza, type, size)}
+            >В корзину</button>
+        }
       </div>
     </li>
   )
 }
 
-export default CatalogItem;
+const mapStateToProps = state => ({
+  cart: state.cart
+});
+
+export default connect(mapStateToProps, { addCart })(CatalogItem);

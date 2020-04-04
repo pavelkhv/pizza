@@ -4,17 +4,17 @@ function PastryList({ typesPastry, type, setType, size }) {
   return (
     <ul className="catalog-item__types">
       {typesPastry.map(pastry => {
-        const disabled = pastry.type === "slim" && size === "small";
-        const active = type === pastry.type;
+        const disabled = pastry.value === "slim" && size.type === "small";
+        const active = type.value === pastry.value;
 
         return (
           <li
             key={pastry.id}
-            className={`${
+            className={
               disabled ? "catalog-item__types-item_disabled" : 
               active ? "catalog-item__types-item_active" : "catalog-item__types-item"
-            }`}
-            onClick={() => (disabled ? {} : setType(pastry.type))}
+            }
+            onClick={() => (disabled ? {} : setType(pastry))}
           >
             {pastry.name}
           </li>
