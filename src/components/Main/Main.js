@@ -1,8 +1,8 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
+import React from "react";
+import { Route } from "react-router-dom";
 
-import Catalog from '../Catalog/Catalog';
-import Order from '../Order/Order';
+import Catalog from "../Catalog/Catalog";
+import Order from "../Order/Order";
 
 function Main() {
   return (

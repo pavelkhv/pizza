@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-import logo from '../../assets/img/icons/logo.svg';
+import logo from "../../assets/img/icons/logo.svg";
 
 function Logo() {
   return (

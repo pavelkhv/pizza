@@ -1,7 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
-
-import { addCart, removeCart } from "../../actions/index";
 
 function ChangeButtons({ item, addCart, removeCart }) {
   const { pizza, pastry, size } = item;
@@ -24,8 +21,4 @@ function ChangeButtons({ item, addCart, removeCart }) {
   );
 }
 
-const mapStateToProps = (state) => ({
-  count: state.cart,
-});
-
-export default connect(mapStateToProps, { addCart, removeCart })(ChangeButtons);
+export default ChangeButtons;

@@ -5,11 +5,12 @@ const initialState = {
 
 const changeCartPizza = (state, pizza, pastry, size, operation) => {
   let cart = {...state};
-  let pizzaCount = pizza[size.type][pastry.value].count;
+  let pizzaParams = pizza[size.type][pastry.value];
+  let pizzaCount = pizzaParams.count;
 
-  pizza[size.type][pastry.value].count = pizzaCount + operation;
-  cart.length = cart.length + operation;
-
+  cart.length += operation ? operation : - pizzaCount;
+  pizzaParams.count = operation ? pizzaCount + operation : 0;
+  
   const includePizza = cart.list.find(item => {
     return item.pizza == pizza && item.pastry == pastry && item.size == size
   });
@@ -18,7 +19,7 @@ const changeCartPizza = (state, pizza, pastry, size, operation) => {
     cart.list.push({pizza, pastry, size})
   };
 
-  if(pizzaCount <= 1 && operation < 0) {
+  if(pizzaParams.count <= 0 && operation <= 0) {
     const index = cart.list.indexOf(includePizza);
     cart.list.splice(index, 1);
   }
@@ -29,11 +30,11 @@ const changeCartPizza = (state, pizza, pastry, size, operation) => {
 const reducerCart = (state=initialState, {type, pizza, pastry, size}) => {
   switch(type) {
     case "ADD_CART": 
-      const addedCart = changeCartPizza(state, pizza, pastry, size, 1);
-      return addedCart;
+      return changeCartPizza(state, pizza, pastry, size, 1);
     case "REMOVE_CART":
-      const removedCart = changeCartPizza(state, pizza, pastry, size, -1);
-      return removedCart;
+      return changeCartPizza(state, pizza, pastry, size, -1);
+    case "DELETE_CART":
+      return changeCartPizza(state, pizza, pastry, size, 0);
     default:
       return state;
   }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
-import { addCart } from '../../actions/index';
+import { addCart, removeCart } from '../../actions/index';
 
 import SizeList from './SizeList';
 import PastryList from './PastryList';
@@ -18,7 +18,7 @@ const RADIUS_PIZZA = [
   {id: 2, type: "large", value: 36}
 ];
 
-function CatalogItem({ pizza, cart, addCart }) {
+function CatalogItem({ pizza, addCart, removeCart }) {
   const [type, setType] = useState(TYPES_PASTRY[0]);
   const [size, setSize] = useState(RADIUS_PIZZA[0]);
 
@@ -27,15 +27,18 @@ function CatalogItem({ pizza, cart, addCart }) {
 
   return (
     <li className="catalog-item">
-      <div className="">
+      <div>
         <img 
           src={require(`../../assets/img/pizzas/${pizza.name}.png`)} 
           className="catalog-item__img" 
           alt={pizza.name}
         />
       </div>
+
       <h3 className="catalog-item__title">{pizza.title}</h3>
+
       <p className="catalog-item__description">{pizza.description}</p>
+      
       <div className="catalog-item__params">
         <PastryList 
           typesPastry={TYPES_PASTRY}
@@ -60,7 +63,11 @@ function CatalogItem({ pizza, cart, addCart }) {
         </div>
 
         {paramsPizza.count 
-          ? <ChangeButtons item={item}/> 
+          ? <ChangeButtons 
+              item={item} 
+              addCart={addCart}
+              removeCart={removeCart}
+            /> 
           : <button 
               className="catalog-item__footer-button"
               onClick={() => addCart(pizza, type, size)}
@@ -75,4 +82,4 @@ const mapStateToProps = state => ({
   cart: state.cart
 });
 
-export default connect(mapStateToProps, { addCart })(CatalogItem);
+export default connect(mapStateToProps, { addCart, removeCart })(CatalogItem);

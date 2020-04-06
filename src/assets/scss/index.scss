@@ -128,6 +128,7 @@ html {
     overflow-y: auto;
   }
   &-item {
+    position: relative;
     background: rgba($grey-color, 0.7);
     border-radius: 5px;
     padding: 1rem;
@@ -185,6 +186,14 @@ html {
     &__info {
       display: flex;
       flex-direction: column;
+    }
+    &__delete {
+      position: absolute;
+      transform: scaleY(0.8);
+      right: 1rem;
+      top: 1rem;
+      color: grey;
+      cursor: pointer;
     }
   }
 }

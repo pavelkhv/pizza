@@ -4,7 +4,7 @@ import pizzasList from "../../assets/js/pizzasList";
 
 import CatalogItem from "./CatalogItem";
 import TypesList from "./TypesList";
-import SortList from './SortList';
+import SortList from "./SortList";
 
 const TYPES_PIZZA = [
   { id: 0, value: "all", name: "Все" },

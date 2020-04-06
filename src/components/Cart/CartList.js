@@ -1,8 +1,11 @@
-import React from 'react';
+import React from "react";
+import { connect } from "react-redux";
 
-import ChangeButtons from './ChangeButtons';
+import { addCart, removeCart, deleteCart } from "../../actions/index";
 
-function CartList({ cart }) {
+import ChangeButtons from "./ChangeButtons";
+
+function CartList({ cart, addCart, removeCart, deleteCart }) {
   return (!!cart.length &&
     <ul className="cart-list">
       {
@@ -11,7 +14,11 @@ function CartList({ cart }) {
           const pizzaParams = pizza[size.type][pastry.value];
 
           return (
-            <li key={pizza.id + size.type} className="cart-item">
+            <li key={pizza.id + pastry.value + size.type} className="cart-item">
+              <span 
+                className="cart-item__delete"
+                onClick={() => deleteCart(pizza, pastry, size)} 
+              >X</span>
               <h4 className="cart-item__title">{pizza.title}</h4>
               <p className="cart-item__text">{pastry.name}, {size.value} см</p>
               <p className="cart-item__text">{pizza.description}</p>
@@ -21,7 +28,11 @@ function CartList({ cart }) {
                   <span className="cart-item__weight">{pizzaParams.weight} гр</span>
                 </div>
 
-                <ChangeButtons item={item} />
+                <ChangeButtons 
+                  item={item} 
+                  addCart={addCart} 
+                  removeCart={removeCart} 
+                />
               </div>
             </li>
           )
@@ -31,4 +42,8 @@ function CartList({ cart }) {
   )
 }
 
-export default CartList;
+const mapStateToProps = (state) => ({
+  cart: state.cart,
+});
+
+export default connect(mapStateToProps, { addCart, removeCart, deleteCart })(CartList);

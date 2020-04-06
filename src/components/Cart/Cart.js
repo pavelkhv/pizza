@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
 
-import { addCart } from '../../actions/index';
+import { addCart } from "../../actions/index";
 
-import CartList from './CartList';
+import CartList from "./CartList";
 
 function Cart({ cart }) {
   const [sum, setSum] = useState(0);
   const [openCart, setOpenCart] = useState(false);
-  
+
   useEffect(() => {
     const total = cart.list.map(({ pizza, pastry, size }) => {
       const pizzaParams = pizza[size.type][pastry.value];
@@ -24,22 +24,23 @@ function Cart({ cart }) {
         <span className="cart-button__price">{sum} BYN</span>
         <span className="cart-button__count">{cart.length}</span>
       </div>
+
       {openCart && 
         <div className="cart-modal">
           <div className="cart-modal__header">
             <h3 className="cart-modal__title">Корзина</h3>
           </div>
 
-          <CartList cart={cart} />
+          <CartList />
 
           <div className="cart-modal__footer">
-            <p className="cart-modal__total-price">Сумма заказа: {sum} руб.</p> 
+            <p className="cart-modal__total-price">Сумма заказа: {sum} руб.</p>
             <p className="cart-modal__total-count">Товаров: {cart.length}</p>
           </div>
         </div>
       }
     </div>
-  )
+  );
 }
 
 const mapStateToProps = state => ({

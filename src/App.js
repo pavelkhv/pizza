@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import Header from './components/Header/Header';
-import Main from './components/Main/Main';
+import Header from "./components/Header/Header";
+import Main from "./components/Main/Main";
 
-import './assets/scss/index.scss';
+import "./assets/scss/index.scss";
 
 function App() {
   return (

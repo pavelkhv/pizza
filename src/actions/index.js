@@ -11,3 +11,10 @@ export const removeCart = (pizza, pastry, size) => ({
   pastry,
   size
 });
+
+export const deleteCart = (pizza, pastry, size) => ({
+  type: 'DELETE_CART',
+  pizza,
+  pastry,
+  size
+});

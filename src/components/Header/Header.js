@@ -1,8 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import Cart from '../Cart/Cart';
-
-import Logo from '../Logo/Logo';
+import Cart from "../Cart/Cart";
+import Logo from "../Logo/Logo";
 
 function Header() {
   return (
