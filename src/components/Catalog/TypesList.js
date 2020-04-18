@@ -4,7 +4,7 @@ function TypesList({ typesPizza, currentType, setCurrentType }) {
   return (
     <ul className="catalog-header__list">
       {typesPizza.map(item => {
-        const active = item.value == currentType.value;
+        const active = item.value === currentType.value;
 
         return (
           <li

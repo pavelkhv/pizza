@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 import { addCart } from "../../actions/index";
 
@@ -36,6 +37,9 @@ function Cart({ cart }) {
           <div className="cart-modal__footer">
             <p className="cart-modal__total-price">Сумма заказа: {sum} руб.</p>
             <p className="cart-modal__total-count">Товаров: {cart.length}</p>
+            <Link to="/order" onClick={() => setOpenCart(false)}>
+              <button className="cart-modal__order" disabled={cart.length < 1}>Оформить заказ</button>
+            </Link>
           </div>
         </div>
       }
