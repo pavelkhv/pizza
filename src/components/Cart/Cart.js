@@ -2,13 +2,15 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { addCart } from "../../actions/index";
+import { addCart, removeCart, deleteCart } from "../../actions/index";
 
 import CartList from "./CartList";
 
-function Cart({ cart }) {
+function Cart(props) {
   const [sum, setSum] = useState(0);
   const [openCart, setOpenCart] = useState(false);
+
+  const { cart } = props;
 
   useEffect(() => {
     const total = cart.list.map(({ pizza, pastry, size }) => {
@@ -32,7 +34,7 @@ function Cart({ cart }) {
             <h3 className="cart-modal__title">Корзина</h3>
           </div>
 
-          <CartList />
+          <CartList {...props} />
 
           <div className="cart-modal__footer">
             <p className="cart-modal__total-price">Сумма заказа: {sum} руб.</p>
@@ -51,4 +53,4 @@ const mapStateToProps = state => ({
   cart: state.cart
 });
 
-export default connect(mapStateToProps, { addCart })(Cart);
+export default connect(mapStateToProps, { addCart, removeCart, deleteCart })(Cart);

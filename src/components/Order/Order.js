@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+
+import { addCart, removeCart, deleteCart } from "../../actions/index";
 
 import CartList from "../Cart/CartList";
 import AddressForm from "./AddressForm";
@@ -29,7 +32,7 @@ const initialInfoState = {
   comment: "",
 };
 
-function Order() {
+function Order(props) {
   const [order, setOrder] = useState(ORDER_TYPES[0]);
   const [pizzeriaAddress, setPizzeriaAddress] = useState(null);
   const [address, setAddress] = useState(initialAddressState);
@@ -63,11 +66,15 @@ function Order() {
         </div>
 
         <div className="order-sidebar">
-          <CartList />
+          <CartList {...props} />
         </div>
       </div>
     </div>
   );
 }
 
-export default Order;
+const mapStateToProps = state => ({
+  cart: state.cart
+});
+
+export default connect(mapStateToProps, { addCart, removeCart, deleteCart })(Order);
